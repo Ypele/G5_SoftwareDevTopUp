@@ -1,16 +1,16 @@
 import styled,{css} from 'styled-components'
-
+import {Link} from 'react-router-dom'
 export const Logo = styled.div`
-  float: left;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 20px;
+  padding-right: 20px;
   height: 40px;
   user-select: none;
 `
 
 export const HeaderDiv = styled.div`
-    display:inline-flex;
+     display:inline-flex;
    
 `
 export const HeaderList = styled.ul`
@@ -18,6 +18,7 @@ export const HeaderList = styled.ul`
     margin: 0;
     padding: 0;
     padding:20px 0px 0px 10px;
+    
 `
 export const HeaderLabel = styled.li`
     display: inline-block;
@@ -30,6 +31,11 @@ export const HeaderLabel = styled.li`
     margin-right: 1px;
     ${props => props.className === 'active' && css`
         background-color: #3b97d3;
+        color:white;
     `}
     position:relative;
+`
+export const sLink = styled(Link)`
+text-decoration: none;
+color:inherit;
 `

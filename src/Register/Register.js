@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { authenticate } from '../data/api/auth'
-import { Button, Form, Label } from 'semantic-ui-react'
+import { Button, Form} from 'semantic-ui-react'
+import {RegisterWrapper} from './styles'
 function Message(msg) {
     return {
         registerMsg: msg.message
@@ -17,12 +18,16 @@ class Register extends Component {
     }
     render() {
         return (
-            <div>
+            <RegisterWrapper>
                 <Form onSubmit={this.handleSubmit}>
-                    <Label>Email</Label>
+                         <Form.Field>
+                    <label>Email</label>
                     <input ref={(email)=> this.email = email}/>
-                    <Label>Password</Label>
+                    </Form.Field> 
+                         <Form.Field>
+                    <label>Password</label>
                     <input ref={(pass)=> this.pass= pass}/>
+                    </Form.Field>   
                     <div>
                         {
                             this.state.registerMsg &&
@@ -34,7 +39,7 @@ class Register extends Component {
                         </div>
                         <Button type="submit">Register</Button>
                 </Form>
-            </div>
+            </RegisterWrapper>
                 );
     }
 }
