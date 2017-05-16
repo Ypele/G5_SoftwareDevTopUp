@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Icon, Table } from 'semantic-ui-react'
+import { Table } from 'semantic-ui-react'
 
 export const BookingDiv = styled.div`
 margin:50px;

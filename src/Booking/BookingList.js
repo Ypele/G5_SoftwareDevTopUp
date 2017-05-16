@@ -10,8 +10,10 @@ import * as s from './styles'
 
 class BookingList extends Component {
     render() {
+        console.log(this.props)
         return (
             <s.BookingDiv>
+               
                 <s.BookingTable celled>
                     <s.TableHeader>
                         <Table.Row>

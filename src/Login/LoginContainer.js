@@ -1,15 +1,41 @@
 import React, { Component } from 'react';
-import Login from './Login'
+import {login, resetPassword} from '../data/api/auth'
+import { Button, Form } from 'semantic-ui-react'
+function Message(msg){
+    return{
+        loginResult:msg
+    }
+}
 class LoginContainer extends Component {
-    onSubmit(){
-        //Login()
-        //PushBookingPage()
-        console.log('Submitted')
+    state = {loginResult: ''}
+    submitHandler = (e) =>{
+        e.preventDefault()
+        login(this.email.value,this.pass.value).catch((error) =>{this.setState(Message('Error:'+error))
+        console.log(error)})
+        
+    }
+    resetPassword =()=>{
+        resetPassword(this.email.value)
+        .then(()=>this.setState(Message('Reset password email sent!')))
+        .catch((error)=> this.setState(Message('Email address not found.')))
     }
     render() {
         return (
             <div>
-             <Login onSubmit={this.onSubmit}/>
+             <Form onSubmit={this.submitHandler}>
+                <Form.Field>
+                    <label>Username</label>
+                    <input ref={(email) => this.email = email} />
+                </Form.Field>
+                <Form.Field>
+                    <label>Password</label>
+                    <input type="password" ref={(pass) => this.pass = pass} />
+                </Form.Field>
+                <Form.Field>
+   
+                </Form.Field>
+                <Button type='submit'>Submit</Button>
+            </Form>
             </div>
         );
     }
