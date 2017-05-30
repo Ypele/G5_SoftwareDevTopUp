@@ -61,11 +61,14 @@ class Home extends Component {
                                 <s.sLink to="/" className="navbar-brand"><img height={80} src={g5logo} alt='G5Logo'/></s.sLink>
                
                             <s.HeaderList>
-                                <s.HeaderLabel>
+                                {/*<s.HeaderLabel>
                                     <s.sLink to="/">Home</s.sLink>
-                                </s.HeaderLabel>
+                                </s.HeaderLabel>*/}
                                 <s.HeaderLabel>
                                     <s.sLink to="/booking">Booking List</s.sLink>
+                                </s.HeaderLabel>
+                                <s.HeaderLabel>
+                                    <s.sLink to="/booking">Chat Support</s.sLink>
                                 </s.HeaderLabel>
                                 <s.HeaderLabel>
                                     {this.state.loggedIn
@@ -96,7 +99,7 @@ class Home extends Component {
                                 <PublicRoute loggedIn={this.state.loggedIn} path='/login' component={Login} />
                                 <PublicRoute loggedIn={this.state.loggedIn} path='/register' component={Register} />
                                 <PrivateRoute loggedIn={this.state.loggedIn} user={this.user} path='/booking' component={BookingList} />
-                                <Route render={() => <h3>No Match</h3>} />
+                                <Route render={() => <h3>404 Page not found</h3>} />
                             </Switch>
                         </div>
                     </div>
