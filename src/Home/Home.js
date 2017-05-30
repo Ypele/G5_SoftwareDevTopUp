@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, BrowserRouter, Link, Redirect, Switch } from 'react-router-dom'
+import { Route, BrowserRouter, Redirect, Switch } from 'react-router-dom'
 import { fAuth } from '../data/config/firebase'
 import { logout } from '../data/api/auth'
 import Register from '../Register/Register'
@@ -58,32 +58,33 @@ class Home extends Component {
                     <nav className="navbar navbar-default navbar-static-top">
                         <s.HeaderDiv>
 
-                                <s.sLink to="/" className="navbar-brand"><img height={100} src={g5logo} alt='G5Logo'/></s.sLink>
+                                <s.sLink to="/" className="navbar-brand"><img height={80} src={g5logo} alt='G5Logo'/></s.sLink>
                
                             <s.HeaderList>
-                                <s.HeaderLabel className="active">
-                                    <s.sLink to="/" className="navbar-brand">Home</s.sLink>
+                                <s.HeaderLabel>
+                                    <s.sLink to="/">Home</s.sLink>
                                 </s.HeaderLabel>
                                 <s.HeaderLabel>
-                                    <Link to="/booking" className="navbar-brand">BookingList</Link>
+                                    <s.sLink to="/booking">Booking List</s.sLink>
                                 </s.HeaderLabel>
                                 <s.HeaderLabel>
                                     {this.state.loggedIn
-                                        ? <button
-                                            style={{ border: 'none', background: 'transparent' }}
-                                            onClick={() => {
+                                        ? <s.sLink
+                                            to="/"
+                                            onClick={(e) => {
+                                                e.preventDefault()
                                                 logout()
                                             }}
-                                            className="navbar-brand">Logout</button>
+                                            >Logout</s.sLink>
                                         : <span>
-                                            <Link to="/login" className="navbar-brand">Login</Link>
+                                            <s.sLink to="/login" className="navbar-brand">Login</s.sLink>
                                         </span>}
                                 </s.HeaderLabel>
                                 {this.state.loggedIn
                                     ?
                                     null
                                     : <s.HeaderLabel>
-                                        <Link to="/register" className="navbar-brand">Register</Link>   
+                                        <s.sLink to="/register" className="navbar-brand">Register</s.sLink>   
                                         </s.HeaderLabel>}
                             </s.HeaderList>
                         </s.HeaderDiv>
