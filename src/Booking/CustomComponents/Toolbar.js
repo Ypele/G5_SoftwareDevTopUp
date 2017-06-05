@@ -1,15 +1,18 @@
 import React from 'react'
 import * as s from '../styles'
 import moment from 'moment'
+import dates from 'react-big-calendar/lib/utils/dates'
 
 const CustomToolbar = (toolbar) => {
     const goToBack = () => {
-        toolbar.date.setMonth(toolbar.date.getMonth() - 1);
+        console.log(toolbar)
+        //toolbar.date.setMonth(toolbar.date.getMonth() - 1);
+        toolbar.date.setDate(toolbar.date.getDate()-7);
         toolbar.onNavigate('prev');
     };
 
     const goToNext = () => {
-        toolbar.date.setMonth(toolbar.date.getMonth() + 1);
+       toolbar.date.setDate(toolbar.date.getDate()+7);
         toolbar.onNavigate('next');
     };
 
