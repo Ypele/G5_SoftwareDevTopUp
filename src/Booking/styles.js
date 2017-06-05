@@ -17,28 +17,23 @@ width: 100%;
 border-collapse: collapse;
 `
 
-export const TableHeader = styled(Table.Header) `
+export const TableHeader = styled.div`
     padding: 15px;
-    text-align: left;
-    border: 1px solid white;
+    text-align: center;
+    width:100%;
 `
 
-export const TableData = styled(Table.Cell) `
-    padding: 15px;
-    text-align: left;
+export const HeaderButton= styled.button`
     border: 1px solid white;
-    &:hover {
-   background-color: green;
-   color:white;
-}
+    border-radius: 3px;
+    background: white;
+    color:royalblue;
+    padding-left:5px;
+    padding-right:5px;
+    margin:1px;
+`
+export const HeaderLabel = styled.label`
+    font-size: 20px;
+    color:white;
 `
 
-export const TableHeaderCell = styled(Table.HeaderCell) `
-    padding: 15px;
-    text-align: left;
-    border: 1px solid white;
-   &:hover {
-   background-color: royalblue;
-   color:white;
-}
-`

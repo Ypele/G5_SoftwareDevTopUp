@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
+import * as colors from '../assets/colors'
+
 export const Logo = styled.div`
   padding-top: 10px;
   padding-bottom: 10px;
@@ -14,7 +16,11 @@ export const Logo = styled.div`
 
 export const HeaderDiv = styled.div`
      width:100%;
-     background:forestgreen;
+     background:${colors.ASPHALT_LIGHT};
+`
+export const ContentDiv = styled.div`
+    width:100%;
+    background:${colors.HEADER}
 `
 export const HeaderList = styled.ul`
     height: 40px;

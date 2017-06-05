@@ -92,7 +92,7 @@ class Home extends Component {
                             </s.HeaderList>
                         </s.HeaderDiv>
                     </nav>
-                    <div className="container">
+                    <s.ContentDiv>
                         <div className="row">
                             <Switch>
                                 <Route path='/' exact component={App} />
@@ -102,7 +102,7 @@ class Home extends Component {
                                 <Route render={() => <h3>404 Page not found</h3>} />
                             </Switch>
                         </div>
-                    </div>
+                    </s.ContentDiv>
                 </div>
             </BrowserRouter>
         );
