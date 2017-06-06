@@ -75,10 +75,17 @@ class BookingList extends Component {
             return { start, end };
         }
         let components={toolbar:CustomToolbar}
+
         return (
 
             <div>
-                <BigCalendar events={events} defaultView={'week'} defaultDate={new Date()} components={components}/>
+                <BigCalendar 
+                events={events}
+                selectable={true} 
+                defaultView={'week'} 
+                defaultDate={new Date()} 
+                components={components}
+                onSelectSlot={(slotInfo)=> alert(slotInfo.start)}/>
             </div>
         );
     }

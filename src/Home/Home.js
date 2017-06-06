@@ -52,7 +52,8 @@ class Home extends Component {
         this.removeListener()
     }
     render() {
-        return this.state.loading === true ? <h1>Loading</h1> : (
+        //TODO Add a more friendly Loading screen
+        return this.state.loading === true ? <s.LoadingTag>Loading</s.LoadingTag> : (
             <BrowserRouter>
                 <div>
                     <nav className="navbar navbar-default navbar-static-top">

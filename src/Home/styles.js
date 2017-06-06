@@ -13,7 +13,11 @@ export const Logo = styled.div`
   margin-left:30px;
   margin-top:30px;
 `
-
+export const LoadingTag = styled.h1`
+width:100%;
+height:100%;
+text-align:center;
+`
 export const HeaderDiv = styled.div`
      width:100%;
      background:${colors.ASPHALT_LIGHT};

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {login, resetPassword} from '../data/api/auth'
-import { Button, Form } from 'semantic-ui-react'
 import {LoginWrapper} from './styles'
 function Message(msg){
     return{
@@ -23,20 +22,20 @@ class Login extends Component {
     render() {
         return (
             <LoginWrapper>
-             <Form onSubmit={this.submitHandler}>
-                <Form.Field>
+             <form onSubmit={this.submitHandler}>
+                <div>
                     <label>Username</label>
                     <input ref={(email) => this.email = email} />
-                </Form.Field>
-                <Form.Field>
+                </div>
+                <div>
                     <label>Password</label>
                     <input type="password" ref={(pass) => this.pass = pass} />
-                </Form.Field>
-                <Form.Field>
+                </div>
+                <div>
                     {this.state.loginResult}
-                </Form.Field>
-                <Button type='submit'>Submit</Button>
-            </Form>
+                </div>
+                <button type='submit'>Submit</button>
+            </form>
             
             </LoginWrapper>
         );
