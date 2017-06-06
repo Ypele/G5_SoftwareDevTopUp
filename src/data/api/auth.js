@@ -1,4 +1,4 @@
-import {dbRef, fAuth} from '../config/firebase'
+import {dbRef, fAuth,facebookAuth} from '../config/firebase'
 
 export function authenticate(email, pass){
     return fAuth().createUserWithEmailAndPassword(email,pass).then(makeUser)
@@ -22,4 +22,16 @@ export function makeUser(user) {
         uid: user.uid
     })
     .then(()=>user)
+}
+
+//* FACEBOOK AUTH *//
+
+export function loginWithFb() {
+    fAuth().signInWithPopup(facebookAuth).then(function(result){
+        // var token = result.credential.accessToken;
+        return result.user;
+    })
+}
+export function logoutWithFb(){
+    fAuth().signOut()
 }

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import {H4custom} from './styles'
 // import logo from './logo.svg';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h4> Home </h4>
+        <H4custom> Home </H4custom>
       </div>
     );
   }
