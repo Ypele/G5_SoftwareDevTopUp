@@ -37,6 +37,7 @@ class Login extends Component {
         return (
             <LoginWrapper>
                 <LoginButtonsDiv>
+                    <span style={{color:"white"}}>Welcome to Hell! Muie Daniel</span>
                 <LoginFBButton onClick={this.loginWithFb.bind(this)}>Login with Facebook</LoginFBButton>
                 </LoginButtonsDiv>
             </LoginWrapper>

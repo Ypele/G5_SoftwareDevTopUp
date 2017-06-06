@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import * as colors from '../assets/colors'
+// import * as colors from '../assets/colors'
 export const LoginWrapper = styled.div`
     margin: 0;
     width: 100%;
