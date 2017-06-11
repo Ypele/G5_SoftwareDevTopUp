@@ -570,3 +570,13 @@ button.rbc-input::-moz-focus-inner {
   left: 0;
   right: -3px;
 }
+
+.alert-add {
+  padding: 7px;
+  margin: 0;
+}
+
+.members-title {
+  color: #FFF;
+  text-align: center;
+}

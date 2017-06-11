@@ -7,10 +7,12 @@ const firebase_config = {
     projectId: "softwaredevtopup",
     storageBucket: "softwaredevtopup.appspot.com",
     messagingSenderId: "85694341661"
-}
+};
 
-firebase.initializeApp(firebase_config)
+firebase.initializeApp(firebase_config);
 
-export const dbRef = firebase.database().ref()
-export const fAuth = firebase.auth
-export const facebookAuth = new firebase.auth.FacebookAuthProvider()
+export const dbRef = firebase.database().ref();
+export const db = firebase.database();
+export const fAuth = firebase.auth;
+export const facebookAuth = new firebase.auth.FacebookAuthProvider();
+

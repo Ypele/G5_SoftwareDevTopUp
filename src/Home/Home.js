@@ -5,6 +5,7 @@ import { logout } from '../data/api/auth'
 import Register from '../Register/Register'
 import Login from '../Login/Login'
 import BookingList from '../Booking/BookingList'
+import Members from '../Members/Members';
 import AdminLogin from '../Admin/AdminLogin/Admin'
 import App from '../App'
 import * as s from './styles'
@@ -65,6 +66,9 @@ class Home extends Component {
                                     <s.sLink to="/booking">Booking List</s.sLink>
                                 </s.HeaderLabel>
                                 <s.HeaderLabel>
+                                    <s.sLink to="/members">Members</s.sLink>
+                                </s.HeaderLabel>
+                                <s.HeaderLabel>
                                     <s.sLink to="/booking">Chat Support</s.sLink>
                                 </s.HeaderLabel>
                                 <s.HeaderLabel>
@@ -97,6 +101,7 @@ class Home extends Component {
                                 
                                 <PublicRoute loggedIn={this.state.loggedIn} path='/register' component={Register} />
                                 <PrivateRoute loggedIn={this.state.loggedIn} user={this.user} path='/booking' component={BookingList} />
+                                <PrivateRoute loggedIn={this.state.loggedIn} user={this.user} path='/members' component={Members} />
                                 <Route render={() => <h3>404 Page not found</h3>} />
                             </Switch>
                             <PublicRoute loggedIn={this.state.loggedIn} path='/admin/login' component={AdminLogin} />
