@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {login, resetPassword} from '../../data/api/auth'
-import {LoginWrapper} from './styles'
+import {LoginWrapper,LoginButtonInv, LoginInput,LoginForm,LoginAdminMessage} from './styles'
 function Message(msg){
     return{
         loginResult:msg
@@ -22,20 +22,21 @@ class AdminLogin extends Component {
     render() {
         return (
             <LoginWrapper>
-             <form onSubmit={this.submitHandler}>
+                <LoginAdminMessage> Login as Organizer </LoginAdminMessage>
+             <LoginForm onSubmit={this.submitHandler}>
                 <div>
-                    <label>Username</label>
-                    <input ref={(email) => this.email = email} />
+                    <label>E-mail</label>
+                    <LoginInput ref={(email) => this.email = email} />
                 </div>
                 <div>
                     <label>Password</label>
-                    <input type="password" ref={(pass) => this.pass = pass} />
+                    <LoginInput type="password" ref={(pass) => this.pass = pass} />
                 </div>
                 <div>
                     {this.state.loginResult}
                 </div>
-                <button type='submit'>Submit</button>
-            </form>
+                <LoginButtonInv type='submit'>Login as Organizer</LoginButtonInv>
+            </LoginForm>
             
             </LoginWrapper>
         );

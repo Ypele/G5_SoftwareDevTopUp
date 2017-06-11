@@ -1,32 +1,32 @@
 import React, { Component } from 'react';
-import { loginWithFb,logoutWithFb } from '../data/api/auth'
-import { LoginWrapper,LoginButtonsDiv,LoginFBButton } from './styles'
-// import FacebookLogin from 'react-facebook-login';
-// function Message(msg) {
-//     return {
-//         loginResult: msg
-//     }
-// }
+import { loginWithFb, logoutWithFb, login, resetPassword } from '../data/api/auth'
+import { LoginInput ,LoginWrapper, LoginButtonsDiv, LoginButton,LoginButtonInv, LoginWelcomeMessage, LoginForm } from './styles'
+
+function Message(msg) {
+    return {
+        loginResult: msg
+    }
+}
 class Login extends Component {
 
     state = { loginResult: '' }
-    // submitHandler = (e) => {
-    //     e.preventDefault()
-    //     login(this.email.value, this.pass.value)
-    //         .catch((error) => { this.setState(Message(error.message)) })
+    submitHandler = (e) => {
+        e.preventDefault()
+        login(this.email.value, this.pass.value)
+            .catch((error) => { this.setState(Message(error.message)) })
 
-    // }
+    }
 
-    // resetPassword = () => {
-    //     resetPassword(this.email.value)
-    //         .then(() => this.setState(Message('Reset password email sent!')))
-    //         .catch((error) => this.setState(Message('Email address not found.')))
-    // }
+    resetPassword = () => {
+        resetPassword(this.email.value)
+            .then(() => this.setState(Message('Reset password email sent!')))
+            .catch((error) => this.setState(Message('Email address not found.')))
+    }
     loginWithFb() {
         let user = loginWithFb();
         console.log(user)
     }
-    logOut(){
+    logOut() {
         logoutWithFb();
     }
     responseFacebook(response) {
@@ -36,9 +36,24 @@ class Login extends Component {
 
         return (
             <LoginWrapper>
+                <LoginWelcomeMessage>Welcome to Room Reservation</LoginWelcomeMessage>
+                <LoginForm onSubmit={this.submitHandler}>
+                    <div>
+                        <label>E-mail</label>
+                        <LoginInput ref={(email) => this.email = email} />
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <LoginInput type="password" ref={(pass) => this.pass = pass} />
+                    </div>
+                    <div>
+                        {this.state.loginResult}
+                    </div>
+                    <LoginButtonInv type='submit'>Login with email</LoginButtonInv>
+                </LoginForm>
                 <LoginButtonsDiv>
-                <p style={{padding:10,margin:0,color:"white"}}>Welcome to Hell! Muie Daniel</p>
-                <LoginFBButton onClick={this.loginWithFb.bind(this)}>Login with Facebook</LoginFBButton>
+                    
+                    <LoginButton onClick={this.loginWithFb.bind(this)}>Login with Facebook</LoginButton>
                 </LoginButtonsDiv>
             </LoginWrapper>
         );
