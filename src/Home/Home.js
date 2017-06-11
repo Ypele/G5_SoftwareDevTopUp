@@ -92,13 +92,14 @@ class Home extends Component {
                     <s.ContentDiv>
                         <div className="row">
                             <Switch>
-                                <Route path='/' exact component={App} />
+                                <Route path='/' exact render={()=> (this.state.loggedIn ? <Redirect to="/booking"/> : <Redirect to="/login"/>)} />
                                 <PublicRoute loggedIn={this.state.loggedIn} path='/login' component={Login} />
-                                <PublicRoute loggedIn={this.state.loggedIn} path='/admin/login' component={AdminLogin} />
+                                
                                 <PublicRoute loggedIn={this.state.loggedIn} path='/register' component={Register} />
                                 <PrivateRoute loggedIn={this.state.loggedIn} user={this.user} path='/booking' component={BookingList} />
                                 <Route render={() => <h3>404 Page not found</h3>} />
                             </Switch>
+                            <PublicRoute loggedIn={this.state.loggedIn} path='/admin/login' component={AdminLogin} />
                         </div>
                     </s.ContentDiv>
                 </div>
